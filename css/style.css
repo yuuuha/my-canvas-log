@@ -7,6 +7,10 @@ body{
     margin: 0;
 }
 
+h1{
+    font-size: smaller;
+}
+
 #canvas{
     background-color:lightskyblue;
     max-width: 640px;
