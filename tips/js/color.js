@@ -11,7 +11,22 @@ window.addEventListener('load', () => {
 	canvasWidth = canvas.width
 	canvasHeight = canvas.height
 
-	// mouse action
+	// mouse action sp
+	canvas.addEventListener(
+		'touchstart',
+		function (e) {
+			e.preventDefault()
+			var rect = canvas.getBoundingClientRect()
+			var bai = canvasWidth / rect.width
+			yubiTouched = true
+			curX = (e.changedTouches[0].pageX - rect.left) * bai
+			curY = (e.changedTouches[0].pageY - rect.top) * bai
+			touchStart()
+		},
+		false
+	)
+
+	// mouse action pc
 	canvas.addEventListener('mousedown', (e) => {
 		let rect = canvas.getBoundingClientRect()
 		let bai = canvasWidth / rect.width
