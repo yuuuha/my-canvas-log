@@ -19,8 +19,9 @@ window.addEventListener('load', () => {
 			var rect = canvas.getBoundingClientRect()
 			var bai = canvasWidth / rect.width
 			yubiTouched = true
-			curX = (e.changedTouches[0].pageX - rect.left) * bai
-			curY = (e.changedTouches[0].pageY - rect.top) * bai
+			curX =
+				(e.changedTouches[0].pageX - (rect.left + window.pageXOffset)) * bai
+			curY = (e.changedTouches[0].pageY - (rect.top + window.pageYOffset)) * bai
 			touchStart()
 		},
 		false
@@ -132,7 +133,6 @@ function colorListHTML() {
 	let color_list_HTML = []
 	for (let i = 0; i < color_list.length; i++) {
 		color_list_HTML.push(color_list[i])
-		console.log(String(color_list_HTML[i]))
 
 		let div_elm = document.createElement('div')
 		div_elm.id = 'color_name'
