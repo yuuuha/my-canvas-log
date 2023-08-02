@@ -15,12 +15,20 @@ window.addEventListener('load', () => {
 		let rect = canvas.getBoundingClientRect()
 		let bai = canvasWidth / rect.width
 		curTouched = true
-		curX = e.changeTouched[0].pageX - (rect.left + window.pageXOffset)
-		curY = e.changeTouched[0].pageY - (rect.top + window.pageYOffset)
+		curX = (e.changeTouched[0].pageX - (rect.left + window.pageXOffset)) * bai
+		curY = (e.changeTouched[0].pageY - (rect.top + window.pageYOffset)) * bai
 		touchStart()
 	})
 
 	// mouse pc
+	canvas.addEventListener('mousedown', (e) => {
+		let rect = canvas.getBoundingClientRect()
+		let bai = canvasWidth / rect.width
+		curTouched = true
+		curX = (e.clientX - rect.left) * bai
+		curY = (e.clientY - rect.top) * bai
+		touchStart()
+	})
 
 	setup()
 	myrender()
@@ -42,8 +50,10 @@ function myrender() {
 }
 
 function touchStart() {
-	ctx.beginPath()
-	ctx.arc(curX, curY, r, 0, Math.PI * 2, false)
-	ctx.strokeStyle = 'black'
-	ctx.stroke()
+	if (curTouched) {
+		ctx.beginPath()
+		ctx.arc(curX, curY, r, 0, Math.PI * 2, false)
+		ctx.strokeStyle = 'black'
+		ctx.stroke()
+	}
 }
