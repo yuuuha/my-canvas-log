@@ -43,6 +43,11 @@ function setup() {
 }
 
 function myrender() {
+	// background
+	ctx.fillStyle = '#f4f4f4'
+	ctx.fillRect(0, 0, canvasWidth, canvasHeight)
+
+	// center arc
 	ctx.beginPath()
 	ctx.arc(x, y, r, 0, Math.PI * 2, false)
 	ctx.strokeStyle = 'black'
