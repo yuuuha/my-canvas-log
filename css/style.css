@@ -11,6 +11,10 @@ h1{
     font-size: smaller;
 }
 
+.footer_home{
+    font-size: smaller;
+}
+
 #canvas{
     background-color:lightskyblue;
     max-width: 640px;
