@@ -1,0 +1,10 @@
+html,body{
+    text-align: center;
+}
+
+#canvas{
+    background-color: black;
+    max-width: 640px;
+    width: 100%;
+    height: auto;
+}

@@ -1,16 +1,13 @@
 let canvas, ctx
 
-window.addEventListener('load', () => {
-	initial()
-	myrender()
-})
-
-function initial() {
+window.onload = function () {
 	canvas = document.getElementById('canvas')
 	ctx = canvas.getContext('2d')
+
+	draw()
 }
 
-function myrender() {
+function draw() {
 	mycanvaslog = 'my Canvas Log'
 	ctx.font = '60px Helvetica'
 	ctx.textAlign = 'center'
