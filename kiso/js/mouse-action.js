@@ -15,8 +15,8 @@ window.addEventListener('load', () => {
 		let rect = canvas.getBoundingClientRect()
 		let bai = canvasWidth / rect.width
 		curTouched = true
-		curX = (e.changeTouched[0].pageX - (rect.left + window.pageXOffset)) * bai
-		curY = (e.changeTouched[0].pageY - (rect.top + window.pageYOffset)) * bai
+		curX = (e.changeTouched[0].pageX - (rect.left + window.scrollX)) * bai
+		curY = (e.changeTouched[0].pageY - (rect.top + window.scrollY)) * bai
 		touchStart()
 	})
 
