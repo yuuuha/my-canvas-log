@@ -1,18 +1,18 @@
-/* html{ */
-    /* text-align: center; */
-    /* background-color:lightskyblue; */
-/* } */
-
 body{
     margin: 0;
+    text-align: center;
 }
 
-h1{
+/* h1{
     font-size: smaller;
-}
+} */
 
 p{
     font-size: smaller;
+}
+
+li{
+    list-style: none;
 }
 
 .footer_home{
