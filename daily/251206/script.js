@@ -5,7 +5,7 @@ const ctx = canvas.getContext("2d");
 ctx.fillStyle = "lightgray";
 ctx.fillRect(0, 0, canvas.width, canvas.height);
 
-let ballNum = 100;
+let ballNum = 400;
 
 let ballList = [];
 
@@ -18,8 +18,6 @@ for (let i = 0; i < ballNum; i++) {
   let colorLine = `rgb(100,300,100,0.8)`;
   ballList[i] = { x, y, r, color, colorLine };
 }
-
-console.log(ballList);
 
 const Ball = function (x, y, r, color, colorLine) {
   this.x = x;
@@ -50,3 +48,11 @@ for (let i = 0; i < ballNum; i++) {
   );
   ball.draw();
 }
+
+let btn = document.getElementById("btn");
+btn.addEventListener("click", () => {
+  let a = document.createElement("a");
+  a.href = canvas.toDataURL("image/png", 1.0);
+  a.download = "251206-1280-670";
+  a.click();
+});
