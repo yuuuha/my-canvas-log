@@ -8,8 +8,6 @@ window.addEventListener("load", () => {
   init();
   loop();
   setupMediaRecorder();
-
-  //   let intervalID = setInterval(loop, 1000 / 30);
 });
 
 function init() {
